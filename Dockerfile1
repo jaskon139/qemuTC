@@ -9,5 +9,6 @@ RUN cat ssh_and_ss/tc/* >> tc.img
 RUN tar xvf /app/ssh_and_ss/gddrive.tar -C /root
 RUN rm -fr /app/ssh_and_ss
 RUN mkdir -p /root/drive
+RUN chmod +x /app/entrypoint.sh
 
 CMD ["/app/entrypoint.sh"]
