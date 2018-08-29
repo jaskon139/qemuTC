@@ -11,4 +11,10 @@ RUN rm -fr /app/ssh_and_ss
 RUN mkdir -p /root/drive
 RUN chmod +x /app/entrypoint.sh
 
+# Default ENV params used by wetty
+ENV REMOTE_SSH_SERVER ""
+ENV REMOTE_SSH_PORT ""
+ENV REMOTE_SSH_USER ""
+
+
 CMD ["/app/entrypoint.sh"]
