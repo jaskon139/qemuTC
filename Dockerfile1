@@ -1,9 +1,7 @@
-FROM centurylink/wetty-cli
-
+FROM dit4c/gotty
 ADD . /app
+RUN apk add --update --no-cache qemu-system-x86_64 openssh-client git 
 WORKDIR /app
-RUN apt-get update
-RUN  apt-get install -y qemu git tmux
 RUN git clone https://github.com/jaskon139/ssh_and_ss.git
 RUN cat ssh_and_ss/tc/* >> tc.img
 RUN tar xvf /app/ssh_and_ss/gddrive.tar -C /root
@@ -16,5 +14,4 @@ ENV REMOTE_SSH_SERVER ""
 ENV REMOTE_SSH_PORT ""
 ENV REMOTE_SSH_USER ""
 
-
-CMD ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
