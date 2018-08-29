@@ -15,3 +15,4 @@ ENV REMOTE_SSH_PORT ""
 ENV REMOTE_SSH_USER ""
 
 ENTRYPOINT ["/app/entrypoint.sh"]
+CMD ["/app/entrypoint.sh"]
